@@ -1,0 +1,73 @@
+Software Engineer - Coding Exercise
+What do I need to submit?
+Please generate a Ruby on Rails application that meets the conditions outlined in the next
+section. You can use any third party libraries; we recommend using an existing XML parsing
+library if you need to. We use the Nokogiri Gem.
+We must be able to run your application so please provide any documentation necessary to
+accomplish this as part of the project you submit. Please assume the reviewer has not executed
+an application in your language/framework before when developing your documentation.
+If possible, please use ruby version 3.2.2 and rails version 7.1.5 as that is what we run in
+production.
+How much time should I spend on this?
+There is no time limit for the exercise. Out of respect for your time, we designed this exercise
+with the intent that it should take you a few hours. Typically candidates spend 1-2 hours on this
+but please take as much time as you need to complete the work.
+
+What does it need to do?
+As a programmer, I’d like to parse and map an XML file to an expected output given the format.
+The XML file should be read from
+https://drive.google.com/file/d/12Pj_dsaBsAvMIn8NSGmLY5RrdMzOkkSF/view?usp=sharing
+and formatted to the expected format defined below. For each property in the feed, extract each
+of the following values:
+● property_id - Found at ./PropertyID/Identification/@IDValue
+● name - Found at ./PropertyID/MarketingName
+● email - Found at ./PropertyID/Email
+Only add the property to the output if the property location is in Madison.
+Your application should utilize rails scaffolding to include a “Property” model that inherits from
+active record to store properties in the database. This scaffolding will also provide an “index” file
+that will display all properties in the database. A "show" page should also be generated for use
+during the interview session. Please include tailwindcss for styling by using a CDN (see:
+https://tailwindcss.com/docs/installation/play-cdn). Use your intuition for how the page should
+
+look and feel.
+
+Extra credit:
+● Parse out the number of bedrooms ,
+● Use docker compose to orchestrate containers for running your rails application and
+your database
+● Queue a background job (you can use Active Job for this) that fetches the feed file,
+parses it, and loads the data.
+
+Expected Format:
+
+properties = [
+{
+property_id: <value>,
+name: <value>,
+email: <value>
+},
+...
+]
+
+How will this exercise be evaluated?
+An engineer will review the code you submit. At a minimum they must be able to run the
+program and the program must provide the expected results. You should provide any necessary
+documentation, include a README with step-by-step instructions on setting up and running
+your application (e.g., how to install dependencies, run migrations, start the server, execute the
+rake task, and any commands needed to trigger the background job). While your solution
+doesn’t need to be fully production ready, you are being evaluated so put your best foot forward.
+During the next steps of the interview process we will build on top of this application. In one
+session we will integrate large language models. In another, we will work on designing and
+building a “show” page to display the information about the property.
+
+What should I do if I have questions about the problem
+statement?
+
+For any requirements not specified via an example, use your best judgement to determine the
+expected result.
+
+2
+
+How do I submit it?
+Please provide a link to a public repository, such as GitHub or BitBucket or zip up the contents
+in a zip file.
