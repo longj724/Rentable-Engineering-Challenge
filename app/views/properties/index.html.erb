@@ -34,19 +34,7 @@
 
   <div class="flex justify-between items-center mt-6">
     <div class="flex space-x-4">
-      <%= button_to "Import Properties", import_property_feed_index_path, method: :post, class: "px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2" %>
+      <%= button_to "Parse Property Feed", import_property_feed_index_path, method: :post, class: "px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2" %>
     </div>
   </div>
-
-  <%
-=begin%>
-  <% if ParsePropertyFeedJob.is_running? %>
-  <div class="mt-6">
-    <div class="flex justify-center items-center">
-      <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-green-500"></div>
-    </div>
-  </div>
-  <% end %>
-  <%
-=end%>
 </div>
