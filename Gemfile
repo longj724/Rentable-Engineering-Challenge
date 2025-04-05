@@ -46,6 +46,7 @@ gem "bootsnap", require: false
 gem "solid_queue"
 gem "mission_control-jobs"
 gem "dotenv-rails"
+gem "listen"
 
 
 group :development, :test do

@@ -17,7 +17,7 @@ services:
     build: .
     command: bash -c "./bin/rails server -b 0.0.0.0"
     volumes:
-      - .:/myapp
+      - .:/rails
     ports:
       - '3000:3000'
     depends_on:
@@ -32,4 +32,4 @@ services:
     env_file: .env
 
 volumes:
-  postgres_data:
+  postgres_data: {}
