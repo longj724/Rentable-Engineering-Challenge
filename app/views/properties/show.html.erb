@@ -11,12 +11,10 @@
         <div class="w-2/3"><%= @property.email %></div>
       </div>
 
-      <% if @property.respond_to?(:bedrooms) && @property.bedrooms.present? %>
       <div class="flex items-center">
         <div class="w-1/3 text-gray-600 font-medium">Bedrooms:</div>
         <div class="w-2/3"><%= @property.bedrooms %></div>
       </div>
-      <% end %>
     </div>
   </div>
 </div>

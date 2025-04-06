@@ -38,15 +38,17 @@ class PropertyFeedParser
   
   def self.import_properties
     properties = parse
+    new_properties = []
     
     properties.each do |property_data|
-      Property.find_or_create_by(property_id: property_data[:property_id]) do |p|
+      property = Property.find_or_create_by(property_id: property_data[:property_id]) do |p|
         p.name = property_data[:name]
         p.email = property_data[:email]
         p.bedrooms = property_data[:bedrooms]
+        new_properties << p
       end
     end
     
-    properties.count
+    new_properties
   end
 end

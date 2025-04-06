@@ -1,4 +1,4 @@
-class ParsePropertyFeedJob < ApplicationJob
+class ImportPropertiesJob < ApplicationJob
   queue_as :default
 
   def perform()

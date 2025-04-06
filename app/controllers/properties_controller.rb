@@ -42,11 +42,11 @@ class PropertiesController < ApplicationController
   end
 
   def destroy
-    @property.destroy!
-
+    @property.destroy
+    
     respond_to do |format|
-      format.html { redirect_to properties_path, status: :see_other, notice: "Property was successfully destroyed." }
-      format.json { head :no_content }
+      format.html { redirect_to properties_path, notice: "Property was successfully destroyed." }
+      format.turbo_stream { redirect_to properties_path }
     end
   end
 

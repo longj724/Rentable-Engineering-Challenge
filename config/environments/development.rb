@@ -78,4 +78,6 @@ Rails.application.configure do
   config.solid_queue.connects_to = { database: { writing: :queue } }
   config.mission_control.jobs.http_basic_auth_enabled = false
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
 end

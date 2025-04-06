@@ -2,7 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= ENV["DOCKER"] == "true" ? ENV["PG_HOST"] : "localhost" %>
+  host: <%= ENV["DOCKER"] == "true" ? ENV["PG_HOST"] || "db" : "localhost" %>
   port: <%= ENV["PG_PORT"] || 5432 %>
   username: <%= ENV["PG_USER"] || "postgres" %>
   password: <%= ENV["PG_PASSWORD"] || "54321" %>

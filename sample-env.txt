@@ -1,0 +1,5 @@
+PG_USER=postgres
+PG_PASSWORD=54321
+PG_HOST=db
+PG_PORT=5432
+RAILS_ENV=development
