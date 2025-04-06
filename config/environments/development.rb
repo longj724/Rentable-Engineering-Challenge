@@ -79,5 +79,7 @@ Rails.application.configure do
   config.mission_control.jobs.http_basic_auth_enabled = false
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+  if Rails.env.development? && !ENV["DOCKER"]
+    config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+  end
 end

@@ -23,11 +23,11 @@
           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= property.name %></td>
           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= property.email %></td>
           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= property.bedrooms %></td>
-          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex">
-            <%= link_to "View", property, class: "text-indigo-600 hover:text-indigo-900 mr-3", data: { turbo_frame: "_top" } %>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex">
-            <%= button_to "Delete", property, method: :delete, class: "text-indigo-600 hover:text-indigo-900 mr-3", form: { data: { turbo_frame: "properties" } } %>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <div class="flex justify-end">
+              <%= link_to "View", property, class: "text-indigo-600 hover:text-indigo-900 mr-3", data: { turbo_frame: "_top" } %>
+              <%= button_to "Delete", property, method: :delete, class: "text-indigo-600 hover:text-indigo-900", form: { data: { turbo_frame: "properties" } } %>
+            </div>
           </td>
         </tr>
         <% end %>
