@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :property_feed, only: [] do
     collection do
       post 'import', as: :import
-      post 'cancel_import', as: :cancel_import
     end
   end
 
