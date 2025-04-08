@@ -4,14 +4,20 @@ A Ruby on Rails application that parses an XML feed of properties, filters for p
 
 ## Requirements
 
+For local development:
+
 - Ruby 3.2.2
 - Rails 7.1.5
 - PostgreSQL
 
+For Docker:
+
+- Docker Desktop
+
 ## Setup Instructions
 
-For both of the following setup options a .env file is needed.
-Create a .env file in the root directory. Sample values can be copied over from the sample-env.txt file.
+A `.env` file is required for both of the following setup options.
+Create a `.env` file in the root directory. Sample values can be copied over from the `sample-env.txt` file.
 
 ### Option 1: Run in Docker
 
@@ -80,13 +86,13 @@ Create a .env file in the root directory. Sample values can be copied over from 
 
 Run the following command to import properties from the XML feed:
 
-Run with Docker Build:
+If using Docker:
 
 ```bash
 docker-compose run --rm web bin/rails properties:import
 ```
 
-Run with Local Build:
+If running locally:
 
 ```bash
 rails properties:import
@@ -115,7 +121,7 @@ This application:
 - Implements a background job using Solid Queue for parsing the property feed asynchronously
   - The status of jobs can be viewed at `http://localhost:3000/jobs`
 
-## Additional Files
+## Key File Overview
 
 - `app/services/property_feed_parser.rb`: Service for parsing the XML feed
 - `app/jobs/import_properties_job.rb`: Background job for importing properties
