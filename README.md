@@ -38,7 +38,7 @@ Create a `.env` file in the root directory. Sample values can be copied over fro
 3. Build and start the Docker containers:
 
    ```bash
-   docker-compose up --build
+   docker compose up --build
    ```
 
 4. Visit `http://localhost:3000/` in your browser
@@ -89,7 +89,7 @@ Run the following command to import properties from the XML feed:
 If using Docker:
 
 ```bash
-docker-compose run --rm web bin/rails properties:import
+docker compose run --rm web bin/rails properties:import
 ```
 
 If running locally:
